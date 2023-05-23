@@ -4915,6 +4915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JohnLemon
       objectReference: {fileID: 0}
+    - target: {fileID: 5277995170082607718, guid: 3a62b7fcccc8bca46ad91cea51701271, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5277995170083098182, guid: 3a62b7fcccc8bca46ad91cea51701271, type: 3}
       propertyPath: m_RootOrder
       value: 1
