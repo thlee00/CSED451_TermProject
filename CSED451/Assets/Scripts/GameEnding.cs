@@ -19,6 +19,8 @@ public class GameEnding : MonoBehaviour
     float m_Timer;
     bool m_HasAudioPlayed;
 
+    static int curFloor = 3;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
@@ -62,11 +64,17 @@ public class GameEnding : MonoBehaviour
         {
             if (doRestart)
             {
-                SceneManager.LoadScene(0);
+                curFloor = 3;
+                SceneManager.LoadScene("Floor" + curFloor.ToString());
+            }
+            else if (curFloor == 1)
+            {
+                Application.Quit();
             }
             else
             {
-                Application.Quit();
+                curFloor--;
+                SceneManager.LoadScene("Floor" + curFloor.ToString());
             }
         }
     }
