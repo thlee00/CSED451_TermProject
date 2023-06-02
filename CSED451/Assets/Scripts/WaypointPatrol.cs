@@ -7,6 +7,7 @@ public class WaypointPatrol : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
+    public bool isStopped;
 
     int m_CurrentWaypointIndex;
 
@@ -19,6 +20,12 @@ public class WaypointPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isStopped) {
+            navMeshAgent.isStopped = true;
+        }
+        else {
+            navMeshAgent.isStopped = false;
+        }
         if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
         {
             m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;

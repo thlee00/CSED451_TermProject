@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peach
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c99c6f4a2f9c4c4cb90f94f8d0347f0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3762155742744696626, guid: 2c99c6f4a2f9c4c4cb90f94f8d0347f0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -307,6 +311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c99c6f4a2f9c4c4cb90f94f8d0347f0, type: 3}
+--- !u!4 &5701212834794291358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2328352339094511440, guid: 2c99c6f4a2f9c4c4cb90f94f8d0347f0, type: 3}
+  m_PrefabInstance: {fileID: 8021261406439628750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7174329940306780831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c99c6f4a2f9c4c4cb90f94f8d0347f0, type: 3}
@@ -467,6 +476,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1835260068624567785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7174329940306780831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9b6c6bf0e375341a10bfc2e6bce52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numCoin: 10
+  coolDown: 2
+  minHorizontalForce: 2
+  maxHorizontalForce: 5
+  verticalForce: 5
+  throwKey: 323
+  handTransform: {fileID: 5701212834794291358}
+  coinPrefab: {fileID: 847674774726958528, guid: de28a323f6c90744b8a1f8d16e5ace73, type: 3}
 --- !u!114 &6631646785576445167
 MonoBehaviour:
   m_ObjectHideFlags: 0
