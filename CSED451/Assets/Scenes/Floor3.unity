@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46feb4ee4bbd0634bba1742c2c7f7d03, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   rotationSpeed: 60
   moveSpeed: 1
   moveLength: 0.3
@@ -216,11 +216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.size
@@ -228,11 +228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 872832570}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 577526370}
     - target: {fileID: 6759307547184687610, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_RootOrder
@@ -302,30 +302,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: audioBig
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 0aa4344bd3cdf8142a60a5511c2b292e, type: 3}
     - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: audioWalk
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 07e520bb410492d47bf739846d70f2a3, type: 3}
     - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: audioSmall
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 99d06359bae625646baf7c7fc58b94d1, type: 3}
     - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: scaleSpeed
       value: 0.0035
+      objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: numItem.Array.data[0]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: numItem.Array.data[1]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: numItem.Array.data[2]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: itemList.Array.data[0]
@@ -338,6 +339,10 @@ PrefabInstance:
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: itemList.Array.data[2]
       value: ItemPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: itemList.Array.data[3]
+      value: ItemMushroom
       objectReference: {fileID: 0}
     - target: {fileID: 7174329940306780831, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: m_Name
@@ -421,8 +426,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7baae4df647e5ff448b262e6b1326294, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   transperentDelay: 5
   isPlayerTransperented: 0
 --- !u!1 &191448368
@@ -597,11 +602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.size
@@ -609,19 +614,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 1801430138}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 343386936}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 1917059093}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[3]
-      value:
+      value: 
       objectReference: {fileID: 332675202}
     - target: {fileID: 6759307547184687610, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_RootOrder
@@ -827,8 +832,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -945,8 +950,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbc2ebf9727b51d4abdd90acbd01d1ed, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   fadeDuration: 1
   displayImageDuration: 1
   player: {fileID: 174155230}
@@ -3746,11 +3751,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_ExcludedPropertiesInInspector:
   - m_Script
-  m_LockStageInInspector:
+  m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
@@ -3834,11 +3839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.size
@@ -3846,11 +3851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 191591977}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 1509792164}
     - target: {fileID: 6759307547184687610, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_RootOrder
@@ -4017,7 +4022,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 122796868, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_Controller
-      value:
+      value: 
       objectReference: {fileID: 9100000, guid: 245fb21ed79dca84f83fd872b08d600e, type: 2}
     - target: {fileID: 1496906081709079061, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_IsTrigger
@@ -4025,11 +4030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3429652242117461543, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4249,8 +4254,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 95e103a1fa2fc7c45991c1b9cd294d55, type: 2}
   isGlobal: 1
   blendDistance: 0
@@ -4319,8 +4324,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -4562,8 +4567,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
@@ -4596,8 +4601,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   volumeTrigger: {fileID: 963194228}
   volumeLayer:
     serializedVersion: 2
@@ -4694,8 +4699,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
@@ -4737,8 +4742,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1148159264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4748,7 +4753,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1148159267, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155230}
     - target: {fileID: 8371666090739742508, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
       propertyPath: m_RootOrder
@@ -4818,11 +4823,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.size
@@ -4830,11 +4835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 1736645259}
     - target: {fileID: 3650104210873356083, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: waypoints.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 1804712076}
     - target: {fileID: 6759307547184687610, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_RootOrder
@@ -5047,8 +5052,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
@@ -5096,7 +5101,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 122796868, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_Controller
-      value:
+      value: 
       objectReference: {fileID: 9100000, guid: 245fb21ed79dca84f83fd872b08d600e, type: 2}
     - target: {fileID: 1496906081709079061, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_IsTrigger
@@ -5104,11 +5109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3429652242117461543, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5496,7 +5501,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 122796868, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_Controller
-      value:
+      value: 
       objectReference: {fileID: 9100000, guid: 245fb21ed79dca84f83fd872b08d600e, type: 2}
     - target: {fileID: 1496906081709079061, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_IsTrigger
@@ -5504,11 +5509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 174155231}
     - target: {fileID: 3429652242117461536, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: gameEnding
-      value:
+      value: 
       objectReference: {fileID: 434861825}
     - target: {fileID: 3429652242117461543, guid: 876af682c2035fd47bb81437aa693991, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5629,8 +5634,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
