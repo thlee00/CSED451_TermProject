@@ -5,11 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    public int dashCool = 5;
+    public AudioClip audioWalk;
+    public AudioClip audioDash;
+    public bool invincible = false;
 
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
+    bool isDashOnCool = false;
+    bool moveFast = false;
 
     AudioSource m_AudioSource;
 
@@ -32,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        
 
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
@@ -40,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!m_AudioSource.isPlaying)
             {
+                m_AudioSource.clip = audioWalk;
                 m_AudioSource.Play();
             }
         }
@@ -55,7 +63,41 @@ public class PlayerMovement : MonoBehaviour
     void OnAnimatorMove()
     {
         //m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
-        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * 0.05f);
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashOnCool)
+        {
+            m_AudioSource.clip = audioDash;
+            m_AudioSource.Play();
+
+            invincible = true;
+            m_Animator.SetBool("IsDashing", true);
+            moveFast = true;
+            StartCoroutine(DashDuration());
+            isDashOnCool = true;
+            StartCoroutine(DashCoolDown());
+        }
+
+        if (moveFast)
+        {
+            m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * 0.1f);
+        }
+        else
+        {
+            m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * 0.03f);
+        }
         m_Rigidbody.MoveRotation(m_Rotation);
+    }
+
+    IEnumerator DashDuration()
+    {
+        yield return new WaitForSeconds(1);
+        m_Animator.SetBool("IsDashing", false);
+        moveFast = false;
+        invincible = false;
+    }
+
+    IEnumerator DashCoolDown()
+    {
+        yield return new WaitForSeconds(dashCool);
+        isDashOnCool = false;
     }
 }

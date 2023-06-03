@@ -9,10 +9,12 @@ public class Observer : MonoBehaviour
     PlayerTransperent playerTransperent;
 
     bool m_IsPlayerInRange;
+    PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerMovement = player.gameObject.GetComponent<PlayerMovement>();
         playerTransperent = player.gameObject.GetComponent<PlayerTransperent>();
     }
 
@@ -37,7 +39,7 @@ public class Observer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform == player && !playerTransperent.isPlayerTransperented)
+        if (other.transform == player && !playerMovement.invincible && !playerTransperent.isPlayerTransperented)
         {
             m_IsPlayerInRange = true;
         }
