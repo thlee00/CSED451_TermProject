@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody m_Rigidbody;
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
-    public bool isDashing = false;
     bool isDashOnCool = false;
     bool moveFast = false;
 
@@ -26,11 +25,6 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
-    }
-
-    void Update()
-    {
-        isDashing = Input.GetKeyDown(KeyCode.Space);
     }
 
     // Update is called once per frame
@@ -62,12 +56,6 @@ public class PlayerMovement : MonoBehaviour
             m_AudioSource.Stop();
         }
 
-        if (isDashing && !isDashOnCool)
-        {
-            m_AudioSource.clip = audioDash;
-            m_AudioSource.Play();
-        }
-
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);
     }
@@ -75,8 +63,11 @@ public class PlayerMovement : MonoBehaviour
     void OnAnimatorMove()
     {
         //m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
-        if (isDashing && !isDashOnCool)
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashOnCool)
         {
+            m_AudioSource.clip = audioDash;
+            m_AudioSource.Play();
+
             invincible = true;
             m_Animator.SetBool("IsDashing", true);
             moveFast = true;
