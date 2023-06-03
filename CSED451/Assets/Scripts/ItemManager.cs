@@ -7,7 +7,7 @@ public class ItemManager : MonoBehaviour
     // Item Code
     // Coin=0, Shell=1, Potion=2
     public string[] itemList = {"Coin", "Shell", "Potion"};
-    public int[] numItem = {5, 5, 5};
+    public int[] numItem = {5, 5, 0};
     public int currentItem = 0;
     public float coolDown = 2.0f;
     public KeyCode useKey = KeyCode.Mouse0;
@@ -15,7 +15,7 @@ public class ItemManager : MonoBehaviour
     bool m_isCharging;
     float m_chargePower;
     Throw m_throwScript;
-    //ddd m_potionScript;
+    PlayerTransperent m_potionScript;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -36,7 +36,7 @@ public class ItemManager : MonoBehaviour
         m_isCharging = false;
         m_chargePower = 0f;
         m_throwScript = GetComponent<Throw>();
-        //m_potionScript = GetComponent<TransperentPotion>();
+        m_potionScript = GetComponent<PlayerTransperent>();
     }
 
     // Update is called once per frame
@@ -73,6 +73,11 @@ public class ItemManager : MonoBehaviour
             }
         }
     }
+    
+    void GetItem(int itemCode)
+    {
+        numItem[itemCode]++;
+    }
 
     void ChangeItem(int itemCode)
     {
@@ -100,7 +105,6 @@ public class ItemManager : MonoBehaviour
         m_isCharging = false;
     }
 
-
     void Use(int itemCode)
     {
         m_ready = false;
@@ -110,7 +114,7 @@ public class ItemManager : MonoBehaviour
         }
         else if (itemCode == 2)
         {
-            //m_potionScript.Use();
+            m_potionScript.Use();
         }
         numItem[itemCode]--;
         StartCoroutine(CoolDown());
@@ -120,5 +124,17 @@ public class ItemManager : MonoBehaviour
     {
         yield return new WaitForSeconds(coolDown);
         m_ready = true;
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            if (col.gameObject.CompareTag(itemList[i]))
+            {
+                GetItem(i);
+                Destroy(col.gameObject);
+            }
+        }
     }
 }

@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemKey: 256
-  useKey: 283
+  UseKey: 323
   transperentDelay: 5
   isPlayerTransperented: 0
 --- !u!1 &191448368
@@ -4741,7 +4741,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Launcher
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9180008779046579606, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
+      propertyPath: m_TagString
+      value: Potion
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1148159267, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
 --- !u!1001 &1406656546
 PrefabInstance:
