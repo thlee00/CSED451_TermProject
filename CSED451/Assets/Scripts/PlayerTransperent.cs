@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerTransperent : MonoBehaviour
 {
-    public KeyCode itemKey = KeyCode.Keypad1;
-    public KeyCode UseKey = KeyCode.Space;
+    public KeyCode itemKey = KeyCode.F1;
+    public KeyCode useKey = KeyCode.F2;
     public float transperentDelay = 5.0f;
+    public bool isPlayerTransperented;
 
     List<Renderer> renderers;
     int numOfChild;
@@ -23,6 +24,7 @@ public class PlayerTransperent : MonoBehaviour
             Renderer temp = transform.GetChild(i).GetComponent<Renderer>();
             if (temp != null)
             {
+                print(i);
                 renderers.Add(temp);
             }
         }
@@ -37,12 +39,11 @@ public class PlayerTransperent : MonoBehaviour
             m_IsPotionSelected = true;
         }
 
-        if (m_IsPotionSelected && m_IsPotionObtained && Input.GetKeyDown(UseKey))
+        if (Input.GetKeyDown(useKey) && m_IsPotionSelected && m_IsPotionObtained)
         {
-            
-            m_IsPotionSelected = false;
+            isPlayerTransperented = true;
             StartCoroutine(startTransperent());
-            StartCoroutine(endTransperent());
+            m_IsPotionSelected = false;
         }
     }
 
@@ -54,36 +55,17 @@ public class PlayerTransperent : MonoBehaviour
 
     IEnumerator startTransperent()
     {
-        int i = 10;
-        while (i > 0)
+        print("startTransperent");
+        for (int r = 0; r < renderers.Count; r++)
         {
-            i -= 1;
-            float f = i / 10.0f;
-            for (int r = 0; r < renderers.Count; r++) {
-                print(renderers[r]);
-                Color c = renderers[r].material.color;
-                c.a = f;
-                renderers[r].material.color = c;
-            }
-            yield return new WaitForSeconds(transperentDelay);
+            print(renderers[r]);
+            Color c = renderers[r].material.color;
+            print(c);
+            c.a = c.a / 10;
+            renderers[r].material.color = c;
+            print(c);
         }
-    }
-
-    IEnumerator endTransperent()
-    {
-        int i = 0;
-        while (i < 10)
-        {
-            i += 1;
-            float f = i / 10.0f;
-            for (int r = 0; r < renderers.Count; r++)
-            {
-                print(renderers[r]);
-                Color c = renderers[r].material.color;
-                c.a = f;
-                renderers[r].material.color = c;
-            }
-            yield return new WaitForSeconds(0.02f);
-        }
+        yield return new WaitForSeconds(transperentDelay);
+        isPlayerTransperented = false;
     }
 }

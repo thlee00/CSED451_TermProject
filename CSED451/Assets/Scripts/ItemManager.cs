@@ -15,7 +15,8 @@ public class ItemManager : MonoBehaviour
     bool m_isCharging;
     float m_chargePower;
     Throw m_throwScript;
-    //TH : Add potion use script like above
+    //ddd m_potionScript;
+
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
          KeyCode.Alpha2,
@@ -35,7 +36,7 @@ public class ItemManager : MonoBehaviour
         m_isCharging = false;
         m_chargePower = 0f;
         m_throwScript = GetComponent<Throw>();
-        // TH : GetComponent<Potion Script>()
+        //m_potionScript = GetComponent<TransperentPotion>();
     }
 
     // Update is called once per frame
@@ -109,7 +110,7 @@ public class ItemManager : MonoBehaviour
         }
         else if (itemCode == 2)
         {
-            // TH : call potion use method
+            //m_potionScript.Use();
         }
         numItem[itemCode]--;
         StartCoroutine(CoolDown());
