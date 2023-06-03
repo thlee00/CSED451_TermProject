@@ -20,7 +20,6 @@ public class PlayerTransperent : MonoBehaviour
             Renderer temp = transform.GetChild(i).GetComponent<Renderer>();
             if (temp != null)
             {
-                print(i);
                 renderers.Add(temp);
             }
         }
@@ -41,12 +40,14 @@ public class PlayerTransperent : MonoBehaviour
     IEnumerator startTransperent()
     {
         print("startTransperent");
+        print(renderers.Count);
         for (int r = 0; r < renderers.Count; r++)
         {
-            Color c = renderers[r].material.color;
+            print(renderers[1]);
+            Color c = renderers[1].material.color;
             print(c);
             c.a = c.a / 10;
-            renderers[r].material.color = c;
+            renderers[1].material.color = c;
             print(c);
         }
         yield return new WaitForSeconds(transperentDelay);

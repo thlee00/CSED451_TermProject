@@ -6,8 +6,8 @@ public class ItemManager : MonoBehaviour
 {
     // Item Code
     // Coin=0, Shell=1, Potion=2
-    public string[] itemList = {"Coin", "Shell", "Potion"};
-    public int[] numItem = {5, 5, 0};
+    public string[] itemList = {"ItemCoin", "ItemShell", "ItemPotion"};
+    public int[] numItem = {0, 0, 0};
     public int currentItem = 0;
     public float coolDown = 2.0f;
     public KeyCode useKey = KeyCode.Mouse0;

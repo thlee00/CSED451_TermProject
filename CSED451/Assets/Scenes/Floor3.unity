@@ -183,6 +183,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &119243220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9180008779046579606, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
+  m_PrefabInstance: {fileID: 1148159264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &119243223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119243220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46feb4ee4bbd0634bba1742c2c7f7d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 60
+  moveSpeed: 1
+  moveLength: 0.3
 --- !u!1001 &122796866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,6 +300,30 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: numItem.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: numItem.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: numItem.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: itemList.Array.data[0]
+      value: ItemCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: itemList.Array.data[1]
+      value: ItemShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: itemList.Array.data[2]
+      value: ItemPotion
+      objectReference: {fileID: 0}
     - target: {fileID: 7174329940306780831, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: m_Name
       value: Peach
@@ -364,8 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baae4df647e5ff448b262e6b1326294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemKey: 256
-  UseKey: 323
   transperentDelay: 5
   isPlayerTransperented: 0
 --- !u!1 &191448368
@@ -4743,7 +4785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9180008779046579606, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
       propertyPath: m_TagString
-      value: Potion
+      value: ItemPotion
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1148159267, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
