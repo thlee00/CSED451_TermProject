@@ -40,18 +40,32 @@ public class PlayerTransperent : MonoBehaviour
     IEnumerator startTransperent()
     {
         print("startTransperent");
-        print(renderers.Count);
         for (int r = 0; r < renderers.Count; r++)
         {
-            print(renderers[1]);
-            Color c = renderers[1].material.color;
+            print(renderers[r]);
+            Color c = renderers[r].material.color;
             print(c);
-            c.a = c.a / 10;
-            renderers[1].material.color = c;
+            c.r = 0.7f;
+            renderers[r].material.color = c;
             print(c);
         }
         yield return new WaitForSeconds(transperentDelay);
+        StartCoroutine(endTransperent());
         isPlayerTransperented = false;
+    }
+
+    IEnumerator endTransperent()
+    {
         print("endTransperent");
+        for (int r = 0; r < renderers.Count; r++)
+        {
+            print(renderers[r]);
+            Color c = renderers[r].material.color;
+            print(c);
+            c.r = 1.0f;
+            renderers[r].material.color = c;
+            print(c);
+        }
+        yield return new WaitForSeconds(0.1f);
     }
 }
