@@ -72,7 +72,7 @@ crashlytics-build.properties
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Files for VSCode (Added by Minsu, not important)
-*/NuGet/
-*/.vscode/
-omnisharp.json
+# */NuGet/
+# */.vscode/
+# omnisharp.json
 
