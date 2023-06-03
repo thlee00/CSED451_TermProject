@@ -364,9 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baae4df647e5ff448b262e6b1326294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemKey: 256
-  UseKey: 323
   transperentDelay: 5
+  isPlayerTransperented: 0
 --- !u!1 &191448368
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,6 +4639,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1148159267, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 174155230}
     - target: {fileID: 8371666090739742508, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4700,40 +4703,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Launcher
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9180008779046579606, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
+      propertyPath: m_TagString
+      value: Potion
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1148159267, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
---- !u!1 &1148159265 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9180008779046579606, guid: ee74746fa6da5ad4c8594a4ffa3b83d3, type: 3}
-  m_PrefabInstance: {fileID: 1148159264}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &1148159266
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148159265}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.6
-  m_Center: {x: 0, y: 1.2, z: 0}
---- !u!114 &1148159267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148159265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478fda44206faca41912773a0dbfa0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemKey: 32
-  player: {fileID: 174155230}
 --- !u!1001 &1406656546
 PrefabInstance:
   m_ObjectHideFlags: 0
