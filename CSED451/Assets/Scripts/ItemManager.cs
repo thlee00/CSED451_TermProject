@@ -110,7 +110,7 @@ public class ItemManager : MonoBehaviour
         m_ready = false;
         if (itemCode == 0 || itemCode == 1)
         {
-            m_throwScript.Use(m_chargePower);
+            m_throwScript.Use(m_chargePower, itemCode);
         }
         else if (itemCode == 2)
         {
