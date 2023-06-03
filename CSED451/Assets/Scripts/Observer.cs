@@ -7,11 +7,12 @@ public class Observer : MonoBehaviour
     public Transform player;
     public GameEnding gameEnding;
     bool m_IsPlayerInRange;
+    PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerMovement = player.gameObject.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class Observer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform == player)
+        if (other.transform == player && !playerMovement.invincible)
         {
             m_IsPlayerInRange = true;
         }
