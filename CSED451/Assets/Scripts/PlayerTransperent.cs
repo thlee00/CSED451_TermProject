@@ -58,7 +58,6 @@ public class PlayerTransperent : MonoBehaviour
         print("startTransperent");
         for (int r = 0; r < renderers.Count; r++)
         {
-            print(renderers[r]);
             Color c = renderers[r].material.color;
             print(c);
             c.a = c.a / 10;
@@ -67,5 +66,6 @@ public class PlayerTransperent : MonoBehaviour
         }
         yield return new WaitForSeconds(transperentDelay);
         isPlayerTransperented = false;
+        print("endTransperent");
     }
 }
