@@ -6,7 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     // Item Code
     // Coin=0, Shell=1, Potion=2, Mushroom=3
-    public string[] itemList = {"Coin", "Shell", "Potion", "Mushroom"};
+    public string[] itemList = {"ItemCoin", "ItemShell", "ItemPotion", "ItemMushroom"};
     public int[] numItem = {5, 5, 5, 5};
     public int currentItem = 0;
     public float coolDown = 2.0f;
@@ -17,6 +17,7 @@ public class ItemManager : MonoBehaviour
     Throw m_throwScript;
     //ddd m_potionScript;
     Mushroom m_mushroomScript;
+    PlayerTransperent m_potionScript;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -37,6 +38,7 @@ public class ItemManager : MonoBehaviour
         m_isCharging = false;
         m_chargePower = 0f;
         m_throwScript = GetComponent<Throw>();
+        m_potionScript = GetComponent<PlayerTransperent>();
         //m_potionScript = GetComponent<TransperentPotion>();
         m_mushroomScript = GetComponent<Mushroom>();
     }
@@ -80,6 +82,11 @@ public class ItemManager : MonoBehaviour
         }
     }
 
+    void GetItem(int itemCode)
+    {
+        numItem[itemCode]++;
+    }
+
     void ChangeItem(int itemCode)
     {
         if (m_isCharging) {
@@ -106,17 +113,16 @@ public class ItemManager : MonoBehaviour
         m_isCharging = false;
     }
 
-
     void Use(int itemCode)
     {
         m_ready = false;
         if (itemCode == 0 || itemCode == 1)
         {
-            m_throwScript.Use(m_chargePower);
+            m_throwScript.Use(m_chargePower, itemCode);
         }
         else if (itemCode == 2)
         {
-            //m_potionScript.Use();
+            m_potionScript.Use();
         }
         else if (itemCode == 3)
         {
@@ -130,5 +136,17 @@ public class ItemManager : MonoBehaviour
     {
         yield return new WaitForSeconds(coolDown);
         m_ready = true;
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            if (col.gameObject.CompareTag(itemList[i]))
+            {
+                GetItem(i);
+                Destroy(col.gameObject);
+            }
+        }
     }
 }

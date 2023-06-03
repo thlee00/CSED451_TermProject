@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Launcher
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c99ff320f6f817c488d672f506f911eb, type: 3}
+      propertyPath: m_TagString
+      value: ItemPotion
+      objectReference: {fileID: 0}
     - target: {fileID: 1699734392101885249, guid: c99ff320f6f817c488d672f506f911eb, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -147,17 +151,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.6
   m_Center: {x: 0, y: 1.2, z: 0}
---- !u!114 &1148159267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9180008779046579606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478fda44206faca41912773a0dbfa0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemKey: 32
-  player: {fileID: 0}

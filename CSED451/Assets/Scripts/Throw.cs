@@ -9,6 +9,7 @@ public class Throw : MonoBehaviour
     public float maxHorizontalForce = 5.0f;
     public float verticalForce = 5.0f;
     public GameObject coinPrefab;
+    public GameObject shellPrefab;
     Vector3 m_handPos;
     // Start is called before the first frame update
     void Start()
@@ -22,12 +23,16 @@ public class Throw : MonoBehaviour
         
     }
 
-    public void Use(float percent)
+    public void Use(float percent, int itemCode)
     {
         m_handPos = handTransform.position;
-        GameObject coin = Instantiate(coinPrefab, m_handPos, transform.rotation);
-        Rigidbody coinRigid = coin.GetComponent<Rigidbody>();
+        GameObject toThrow;
+        if (itemCode == 0) toThrow = coinPrefab;
+        else if (itemCode == 1) toThrow = shellPrefab;
+        else return; // error
+        GameObject proj = Instantiate(toThrow, m_handPos, transform.rotation);
+        Rigidbody projRigid = proj.GetComponent<Rigidbody>();
         Vector3 force = (maxHorizontalForce - minHorizontalForce) * percent * transform.forward + transform.up * verticalForce;
-        coinRigid.AddForce(force, ForceMode.Impulse);
+        projRigid.AddForce(force, ForceMode.Impulse);
     }
 }
