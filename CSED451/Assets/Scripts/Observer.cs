@@ -6,6 +6,8 @@ public class Observer : MonoBehaviour
 {
     public Transform player;
     public GameEnding gameEnding;
+    PlayerTransperent playerTransperent;
+
     bool m_IsPlayerInRange;
     PlayerMovement playerMovement;
 
@@ -13,6 +15,7 @@ public class Observer : MonoBehaviour
     void Start()
     {
         playerMovement = player.gameObject.GetComponent<PlayerMovement>();
+        playerTransperent = player.gameObject.GetComponent<PlayerTransperent>();
     }
 
     // Update is called once per frame
@@ -36,10 +39,12 @@ public class Observer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform == player && !playerMovement.invincible)
+        if (other.transform == player && !playerMovement.invincible && !playerTransperent.isPlayerTransperented)
         {
             m_IsPlayerInRange = true;
         }
+        else if (playerTransperent.isPlayerTransperented)
+            print("TRANSPERATED");
     }
 
     void OnTriggerExit(Collider other)

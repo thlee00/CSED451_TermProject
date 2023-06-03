@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinAnimation : MonoBehaviour
+public class ThrowableAnimation : MonoBehaviour
 {
     public float rotationSpeed = 10f;
     float m_angle;
@@ -21,9 +21,7 @@ public class CoinAnimation : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        // TODO : Should be only destroyed by map, object, enemy.
-        // Currently enemy's PointOfView also destorys coin.
-        if (!col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Map") || col.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
