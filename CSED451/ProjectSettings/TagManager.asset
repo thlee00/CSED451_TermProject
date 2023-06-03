@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
+  - Map
+  - Enemy
+  - Shell
+  - ItemCoin
+  - ItemShell
+  - ItemPotion
   layers:
   - Default
   - TransparentFX

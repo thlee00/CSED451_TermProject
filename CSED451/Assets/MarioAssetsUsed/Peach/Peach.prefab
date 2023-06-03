@@ -489,6 +489,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 20
+  dashCool: 5
+  audioWalk: {fileID: 0}
+  audioDash: {fileID: 0}
+  invincible: 0
 --- !u!114 &7080717241192812657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +530,7 @@ MonoBehaviour:
   maxHorizontalForce: 5
   verticalForce: 5
   coinPrefab: {fileID: 847674774726958528, guid: de28a323f6c90744b8a1f8d16e5ace73, type: 3}
+  shellPrefab: {fileID: 2826445181039020964, guid: 977ce8f3034265b4fbdaae530f1fd798, type: 3}
 --- !u!4 &7555782047069845541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c99c6f4a2f9c4c4cb90f94f8d0347f0, type: 3}

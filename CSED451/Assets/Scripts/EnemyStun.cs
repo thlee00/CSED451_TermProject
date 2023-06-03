@@ -10,7 +10,7 @@ public class EnemyStun : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("Shell"))
         {
             enemyAnimator.SetBool("IsStunned", true);
             waypointPatrol.isStopped = true;
