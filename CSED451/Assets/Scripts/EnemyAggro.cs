@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyAggro : MonoBehaviour
 {
     public float aggroDistance = 5.0f;
-    public float aggroTime = 5.0f;
-    public float turnSpeed = 0.01f;
+    public float aggroTime = 4.0f;
+    public float turnSpeed = 0.015f;
+    public EnemyStun enemyStun;
     WaypointPatrol m_waypointPatrol;
     bool m_isAggro;
     Vector3 m_targetPosition;
@@ -31,7 +32,7 @@ public class EnemyAggro : MonoBehaviour
     }
 
     public void TryAggro(Vector3 aggroPos) {
-        if (Vector3.Distance(aggroPos, transform.position) <= aggroDistance)
+        if (Vector3.Distance(aggroPos, transform.position) <= aggroDistance && !m_isAggro && !enemyStun.isStunned)
         {
             Aggro(aggroPos);
         }
@@ -46,7 +47,7 @@ public class EnemyAggro : MonoBehaviour
     IEnumerator Delay(float duration)
     {
         yield return new WaitForSeconds(duration);
-        m_waypointPatrol.isStopped = false;
+        if (!enemyStun.isStunned) m_waypointPatrol.isStopped = false;
         m_isAggro = false;
     }
 }

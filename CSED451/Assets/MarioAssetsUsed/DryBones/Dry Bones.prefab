@@ -60,7 +60,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 122796868}
   waypointPatrol: {fileID: 3650104210873356083}
-  stunDelay: 5
+  stunTime: 6
+  recoverTime: 3
+  povCol: {fileID: 3429652242117461537}
+  isStunned: 0
 --- !u!1001 &1780987458747810528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,6 +357,22 @@ MonoBehaviour:
   navMeshAgent: {fileID: 6854880489498249410}
   waypoints: []
   isStopped: 0
+--- !u!114 &5073190624498871469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752590234123607017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acaf7505068be443be537d4ae6592c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroDistance: 5
+  aggroTime: 4
+  turnSpeed: 0.015
+  enemyStun: {fileID: 7686492727155658227}
 --- !u!195 &6854880489498249410
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -376,21 +395,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5073190624498871469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7752590234123607017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3acaf7505068be443be537d4ae6592c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aggroDistance: 5
-  aggroTime: 5
-  turnSpeed: 0.01
 --- !u!1001 &5729041052221400535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -468,3 +472,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d30697b6c7255ed4b8949ba49ad86cb3, type: 3}
+--- !u!136 &3429652242117461537 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6924626309696054262, guid: d30697b6c7255ed4b8949ba49ad86cb3, type: 3}
+  m_PrefabInstance: {fileID: 5729041052221400535}
+  m_PrefabAsset: {fileID: 0}

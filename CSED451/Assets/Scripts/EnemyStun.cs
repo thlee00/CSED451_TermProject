@@ -6,22 +6,42 @@ public class EnemyStun : MonoBehaviour
 {
     public Animator enemyAnimator;
     public WaypointPatrol waypointPatrol;
-    public float stunDelay = 5.0f;
+    public float stunTime = 6.0f;
+    public float recoverTime = 3.0f;
+    public Collider povCol;
+
+    public bool isStunned;
+
+    void Start()
+    {
+        isStunned = false;
+    }
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Shell"))
+        if (other.gameObject.CompareTag("Shell") && !isStunned)
         {
             enemyAnimator.SetBool("IsStunned", true);
             waypointPatrol.isStopped = true;
-            StartCoroutine(Stun());
+            povCol.enabled = false;
+            isStunned = true;
+            StartCoroutine(Recover(recoverTime));
+            StartCoroutine(Stun(stunTime));
         }
     }
 
-    IEnumerator Stun()
+    IEnumerator Stun(float duration)
     {
-        yield return new WaitForSeconds(stunDelay);
+        yield return new WaitForSeconds(duration);
         enemyAnimator.SetBool("IsStunned", false);
         waypointPatrol.isStopped = false;
+        povCol.enabled = true;
+        isStunned = false;
+    }
+
+    IEnumerator Recover(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        enemyAnimator.SetTrigger("TriggerRecover");
     }
 }
