@@ -135,7 +135,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2441291694806545036
+--- !u!114 &3027366226840706769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 847674774726958528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7e236aaaf70ca43bea830044baf3ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c49ae0a318e318428ace9bde7e88af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 600
