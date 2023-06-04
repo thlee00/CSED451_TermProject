@@ -6,16 +6,18 @@ public class Observer : MonoBehaviour
 {
     public Transform player;
     public GameEnding gameEnding;
-    PlayerTransperent playerTransperent;
 
     bool m_IsPlayerInRange;
     PlayerMovement playerMovement;
+    PlayerTransperent playerTransperent;
+    PlayerWardrobe playerWardrobe;
 
     // Start is called before the first frame update
     void Start()
     {
         playerMovement = player.gameObject.GetComponent<PlayerMovement>();
         playerTransperent = player.gameObject.GetComponent<PlayerTransperent>();
+        playerWardrobe = player.gameObject.GetComponent<PlayerWardrobe>();
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class Observer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform == player && !playerMovement.invincible && !playerTransperent.isPlayerTransperented)
+        if (other.transform == player && !playerMovement.invincible && !playerTransperent.isPlayerTransperented && !playerWardrobe.isPlayerInWardrobe)
         {
             m_IsPlayerInRange = true;
         }
