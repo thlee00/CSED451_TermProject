@@ -11,6 +11,8 @@ TagManager:
   - ItemCoin
   - ItemShell
   - ItemPotion
+  - ItemMushroom
+  - WardrobeRange
   layers:
   - Default
   - TransparentFX
