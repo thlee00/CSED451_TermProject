@@ -15,6 +15,8 @@ public class Observer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        gameEnding = GameObject.Find("GameEnding").GetComponent<GameEnding>();
         playerMovement = player.gameObject.GetComponent<PlayerMovement>();
         playerTransperent = player.gameObject.GetComponent<PlayerTransperent>();
         playerWardrobe = player.gameObject.GetComponent<PlayerWardrobe>();
@@ -25,7 +27,7 @@ public class Observer : MonoBehaviour
     {
         if (m_IsPlayerInRange)
         {
-            Vector3 direction = player.position - transform.position + Vector3.up;
+            Vector3 direction = (player.position - transform.position).normalized;
             Ray ray = new Ray(transform.position, direction);
             RaycastHit raycastHit;
 

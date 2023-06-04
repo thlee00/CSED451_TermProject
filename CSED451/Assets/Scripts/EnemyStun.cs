@@ -8,7 +8,7 @@ public class EnemyStun : MonoBehaviour
     public WaypointPatrol waypointPatrol;
     public float stunTime = 6.0f;
     public float recoverTime = 3.0f;
-    public Collider povCol;
+    public GameObject pov;
 
     public bool isStunned;
 
@@ -23,7 +23,7 @@ public class EnemyStun : MonoBehaviour
         {
             enemyAnimator.SetBool("IsStunned", true);
             waypointPatrol.isStopped = true;
-            povCol.enabled = false;
+            pov.SetActive(false);
             isStunned = true;
             StartCoroutine(Recover(recoverTime));
             StartCoroutine(Stun(stunTime));
@@ -35,7 +35,7 @@ public class EnemyStun : MonoBehaviour
         yield return new WaitForSeconds(duration);
         enemyAnimator.SetBool("IsStunned", false);
         waypointPatrol.isStopped = false;
-        povCol.enabled = true;
+        pov.SetActive(true);
         isStunned = false;
     }
 

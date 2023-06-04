@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 20
   dashCool: 5
-  audioWalk: {fileID: 8300000, guid: 07e520bb410492d47bf739846d70f2a3, type: 3}
+  audioWalk: {fileID: 8300000, guid: 7ce4b5254fbd4f8428c84b5ff8f864e9, type: 3}
   audioDash: {fileID: 8300000, guid: b685cd3d417ccd04dae096920d5bc426, type: 3}
   invincible: 0
 --- !u!114 &7080717241192812657

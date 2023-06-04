@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
-    public int dashCool = 5;
+    public float dashCool = 5f;
     public AudioClip audioWalk;
     public AudioClip audioDash;
     public bool invincible = false;
@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     
     AudioSource m_AudioSource;
 
-    bool isDashOnCool = false;
-    bool moveFast = false;
+    bool isDashOnCool;
+    bool moveFast;
 
     PlayerWardrobe playerWardrobe;
 
@@ -30,6 +30,27 @@ public class PlayerMovement : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
         m_AudioSource.loop = false;
         playerWardrobe = transform.gameObject.GetComponent<PlayerWardrobe>();
+        isDashOnCool = false;
+        moveFast = false;
+    }
+
+    void Update()
+    {
+        if (!playerWardrobe.isPlayerInWardrobe)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && !isDashOnCool)
+            {
+                m_AudioSource.clip = audioDash;
+                m_AudioSource.Play();
+
+                invincible = true;
+                m_Animator.SetBool("IsDashing", true);
+                moveFast = true;
+                StartCoroutine(DashDuration());
+                isDashOnCool = true;
+                StartCoroutine(DashCoolDown());
+            }
+        }
     }
 
     // Update is called once per frame
@@ -66,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
+
             Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
             m_Rotation = Quaternion.LookRotation(desiredForward);
         }
@@ -75,19 +97,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!playerWardrobe.isPlayerInWardrobe)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && !isDashOnCool)
-            {
-                m_AudioSource.clip = audioDash;
-                m_AudioSource.Play();
-
-                invincible = true;
-                m_Animator.SetBool("IsDashing", true);
-                moveFast = true;
-                StartCoroutine(DashDuration());
-                isDashOnCool = true;
-                StartCoroutine(DashCoolDown());
-            }
-
             if (moveFast)
             {
                 m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * 0.1f);
@@ -102,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashDuration()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         m_Animator.SetBool("IsDashing", false);
         moveFast = false;
         invincible = false;
