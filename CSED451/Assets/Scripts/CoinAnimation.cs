@@ -20,6 +20,7 @@ public class CoinAnimation : ThrowableAnimation
                     m_enemyAggro.TryAggro(transform.position);
                 }
             }
+            PlayHit();
             Destroy(gameObject);
         }
     }

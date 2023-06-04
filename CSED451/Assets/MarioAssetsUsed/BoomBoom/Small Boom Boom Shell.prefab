@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 180
+  audioHit: {fileID: 8300000, guid: 7047ef00860e3614c99c0ae545ebb7d9, type: 3}
+  audioThrow: {fileID: 8300000, guid: 16b9e04bb3ef2a44c92a5fb0d5b7b651, type: 3}
