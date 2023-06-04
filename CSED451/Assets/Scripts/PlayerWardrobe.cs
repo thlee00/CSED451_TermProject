@@ -9,12 +9,18 @@ public class PlayerWardrobe : MonoBehaviour
 
     Camera m_MainCamera;
     GameObject m_Wardrobe;
+    GameObject[] wardrobeCameras;
     bool m_IsPlayerInRange = false;
 
     // Start is called before the first frame update
     void Start()
     {
         m_MainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        wardrobeCameras = GameObject.FindGameObjectsWithTag("WardrobeCamera");
+        foreach (GameObject wardrobeCamrea in wardrobeCameras)
+        {
+            wardrobeCamrea.GetComponent<Camera>().enabled = false;
+        }
     }
 
     // Update is called once per frame

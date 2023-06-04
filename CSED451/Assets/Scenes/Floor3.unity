@@ -950,6 +950,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transperentDelay: 5
   isPlayerTransperented: 0
+--- !u!114 &174155249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174155230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3610fd2d473b0434e967203535c66f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useKey: 101
+  isPlayerInWardrobe: 0
 --- !u!1 &184734827
 GameObject:
   m_ObjectHideFlags: 0
