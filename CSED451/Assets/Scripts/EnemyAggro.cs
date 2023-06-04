@@ -39,7 +39,7 @@ public class EnemyAggro : MonoBehaviour
     }
 
     void Aggro(Vector3 aggroPos) {
-        m_waypointPatrol.isStopped = true;
+        if (m_waypointPatrol != null) m_waypointPatrol.isStopped = true;
         m_isAggro = true;
         m_targetPosition = aggroPos;
         StartCoroutine(Delay(aggroTime));
@@ -47,7 +47,7 @@ public class EnemyAggro : MonoBehaviour
     IEnumerator Delay(float duration)
     {
         yield return new WaitForSeconds(duration);
-        if (!enemyStun.isStunned) m_waypointPatrol.isStopped = false;
+        if (!enemyStun.isStunned && m_waypointPatrol != null) m_waypointPatrol.isStopped = false;
         m_isAggro = false;
     }
 }

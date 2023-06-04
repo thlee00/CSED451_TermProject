@@ -5,8 +5,8 @@ using UnityEngine;
 public class Throw : MonoBehaviour
 {
     public Transform handTransform;
-    public float minHorizontalForce = 2.0f;
-    public float maxHorizontalForce = 5.0f;
+    public float minHorizontalForce = 1.0f;
+    public float maxHorizontalForce = 4.0f;
     public float verticalForce = 5.0f;
     public GameObject coinPrefab;
     public GameObject shellPrefab;
@@ -32,7 +32,7 @@ public class Throw : MonoBehaviour
         else return; // error
         GameObject proj = Instantiate(toThrow, m_handPos, transform.rotation);
         Rigidbody projRigid = proj.GetComponent<Rigidbody>();
-        Vector3 force = (maxHorizontalForce - minHorizontalForce) * percent * transform.forward + transform.up * verticalForce;
+        Vector3 force = ((maxHorizontalForce - minHorizontalForce) * percent + minHorizontalForce) * transform.forward + transform.up * verticalForce;
         projRigid.AddForce(force, ForceMode.Impulse);
     }
 }

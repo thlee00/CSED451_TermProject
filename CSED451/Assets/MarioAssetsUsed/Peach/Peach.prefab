@@ -529,6 +529,14 @@ MonoBehaviour:
   currentItem: 0
   coolDown: 2
   useKey: 323
+  coinNum: {fileID: 0}
+  shellNum: {fileID: 0}
+  potionNum: {fileID: 0}
+  mushroomNum: {fileID: 0}
+  coinPanel: {fileID: 0}
+  shellPanel: {fileID: 0}
+  potionPanel: {fileID: 0}
+  mushroomPanel: {fileID: 0}
 --- !u!114 &7705180479553724782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,8 +550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTransform: {fileID: 5701212834794291358}
-  minHorizontalForce: 2
-  maxHorizontalForce: 5
+  minHorizontalForce: 1
+  maxHorizontalForce: 4
   verticalForce: 5
   coinPrefab: {fileID: 847674774726958528, guid: de28a323f6c90744b8a1f8d16e5ace73, type: 3}
   shellPrefab: {fileID: 2826445181039020964, guid: 977ce8f3034265b4fbdaae530f1fd798, type: 3}
