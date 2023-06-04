@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class ItemManager : MonoBehaviour
 {
@@ -11,6 +13,15 @@ public class ItemManager : MonoBehaviour
     public int currentItem = 0;
     public float coolDown = 2.0f;
     public KeyCode useKey = KeyCode.Mouse0;
+    public TextMeshProUGUI coinNum;
+    public TextMeshProUGUI shellNum;
+    public TextMeshProUGUI potionNum;
+    public TextMeshProUGUI mushroomNum;
+    public GameObject coinPanel;
+    public GameObject shellPanel;
+    public GameObject potionPanel;
+    public GameObject mushroomPanel;
+
     bool m_ready;
     bool m_isCharging;
     float m_chargePower;
@@ -41,13 +52,48 @@ public class ItemManager : MonoBehaviour
         m_potionScript = GetComponent<PlayerTransperent>();
         //m_potionScript = GetComponent<TransperentPotion>();
         m_mushroomScript = GetComponent<Mushroom>();
+
+        coinNum.text = "x 00";
+        shellNum.text = "x 00";
+        potionNum.text = "x 00";
+        mushroomNum.text = "x 00";
     }
 
     // Update is called once per frame
     void Update()
     {
+        //UI Update
+        SetItemNum();
         if (m_isCharging) {
             Charging();
+        }
+        if (currentItem == 0)
+        {
+            coinPanel.SetActive(true);
+            shellPanel.SetActive(false);
+            potionPanel.SetActive(false);
+            mushroomPanel.SetActive(false);
+        }
+        else if (currentItem == 1)
+        {
+            coinPanel.SetActive(false);
+            shellPanel.SetActive(true);
+            potionPanel.SetActive(false);
+            mushroomPanel.SetActive(false);
+        }
+        else if (currentItem == 2)
+        {
+            coinPanel.SetActive(false);
+            shellPanel.SetActive(false);
+            potionPanel.SetActive(true);
+            mushroomPanel.SetActive(false);
+        }
+        else if (currentItem == 3)
+        {
+            coinPanel.SetActive(false);
+            shellPanel.SetActive(false);
+            potionPanel.SetActive(false);
+            mushroomPanel.SetActive(true);
         }
 
         // Use Item or Charge Item
@@ -148,5 +194,13 @@ public class ItemManager : MonoBehaviour
                 Destroy(col.gameObject);
             }
         }
+    }
+
+    void SetItemNum()
+    {
+        coinNum.text = "x " + (numItem[0] / 10).ToString() + (numItem[0] % 10).ToString();
+        shellNum.text = "x " + (numItem[1] / 10).ToString() + (numItem[1] % 10).ToString();
+        potionNum.text = "x " + (numItem[2] / 10).ToString() + (numItem[2] % 10).ToString();
+        mushroomNum.text = "x " + (numItem[3] / 10).ToString() + (numItem[3] % 10).ToString();
     }
 }

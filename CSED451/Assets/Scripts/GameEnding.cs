@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameEnding : MonoBehaviour
 {
@@ -10,14 +12,17 @@ public class GameEnding : MonoBehaviour
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
-
     public AudioSource exitAudio;
     public AudioSource caughtAudio;
+    public TextMeshProUGUI floorNum;
+    public GameObject startUI;
+    public GameObject inGameUI;
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+    bool m_IsStarted = false;
 
     static int curFloor = 3;
 
@@ -37,6 +42,22 @@ public class GameEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            m_IsStarted = true;
+        }
+        if (!m_IsStarted)
+        {
+            startUI.SetActive(true);
+            inGameUI.SetActive(false);
+        }
+        else
+        {
+            startUI.SetActive(false);
+            inGameUI.SetActive(true);
+        }
+
+        floorNum.text = "Floor " + curFloor.ToString();
         if (m_IsPlayerAtExit)
         {
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
