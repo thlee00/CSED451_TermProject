@@ -5,9 +5,9 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     // Item Code
-    // Coin=0, Shell=1, Potion=2
-    public string[] itemList = {"ItemCoin", "ItemShell", "ItemPotion"};
-    public int[] numItem = {0, 0, 0};
+    // Coin=0, Shell=1, Potion=2, Mushroom=3
+    public string[] itemList = {"ItemCoin", "ItemShell", "ItemPotion", "ItemMushroom"};
+    public int[] numItem = {5, 5, 5, 5};
     public int currentItem = 0;
     public float coolDown = 2.0f;
     public KeyCode useKey = KeyCode.Mouse0;
@@ -15,6 +15,8 @@ public class ItemManager : MonoBehaviour
     bool m_isCharging;
     float m_chargePower;
     Throw m_throwScript;
+    //ddd m_potionScript;
+    Mushroom m_mushroomScript;
     PlayerTransperent m_potionScript;
 
     readonly KeyCode[] m_keyCodes = {
@@ -37,6 +39,8 @@ public class ItemManager : MonoBehaviour
         m_chargePower = 0f;
         m_throwScript = GetComponent<Throw>();
         m_potionScript = GetComponent<PlayerTransperent>();
+        //m_potionScript = GetComponent<TransperentPotion>();
+        m_mushroomScript = GetComponent<Mushroom>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,10 @@ public class ItemManager : MonoBehaviour
                 StartCharging();
             }
             else if (currentItem == 2) {
+                Use(currentItem);
+            }
+            else if (currentItem == 3)
+            {
                 Use(currentItem);
             }
         }
@@ -73,7 +81,7 @@ public class ItemManager : MonoBehaviour
             }
         }
     }
-    
+
     void GetItem(int itemCode)
     {
         numItem[itemCode]++;
@@ -115,6 +123,10 @@ public class ItemManager : MonoBehaviour
         else if (itemCode == 2)
         {
             m_potionScript.Use();
+        }
+        else if (itemCode == 3)
+        {
+            m_mushroomScript.Use();
         }
         numItem[itemCode]--;
         StartCoroutine(CoolDown());

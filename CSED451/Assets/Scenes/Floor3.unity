@@ -300,17 +300,33 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: audioBig
+      value: 
+      objectReference: {fileID: 8300000, guid: 0aa4344bd3cdf8142a60a5511c2b292e, type: 3}
+    - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: audioWalk
+      value: 
+      objectReference: {fileID: 8300000, guid: 07e520bb410492d47bf739846d70f2a3, type: 3}
+    - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: audioSmall
+      value: 
+      objectReference: {fileID: 8300000, guid: 99d06359bae625646baf7c7fc58b94d1, type: 3}
+    - target: {fileID: 5138842232318356120, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: scaleSpeed
+      value: 0.0035
+      objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: numItem.Array.data[0]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: numItem.Array.data[1]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: numItem.Array.data[2]
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: itemList.Array.data[0]
@@ -323,6 +339,10 @@ PrefabInstance:
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: itemList.Array.data[2]
       value: ItemPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: itemList.Array.data[3]
+      value: ItemMushroom
       objectReference: {fileID: 0}
     - target: {fileID: 7174329940306780831, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: m_Name

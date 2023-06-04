@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource.loop = false;
     }
 
     // Update is called once per frame
@@ -53,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            m_AudioSource.Stop();
+            if (m_AudioSource.clip == audioWalk) {
+                m_AudioSource.Stop();
+            }
         }
 
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
@@ -93,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         m_Animator.SetBool("IsDashing", false);
         moveFast = false;
         invincible = false;
+        //m_AudioSource.Stop();
     }
 
     IEnumerator DashCoolDown()
