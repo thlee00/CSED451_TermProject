@@ -944,7 +944,7 @@ PrefabInstance:
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: coinPanel
       value: 
-      objectReference: {fileID: 135689442}
+      objectReference: {fileID: 135689444}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: potionNum
       value: 
@@ -960,7 +960,7 @@ PrefabInstance:
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: shellPanel
       value: 
-      objectReference: {fileID: 2133344701}
+      objectReference: {fileID: 2133344703}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: mushroomNum
       value: 
@@ -968,7 +968,7 @@ PrefabInstance:
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: potionPanel
       value: 
-      objectReference: {fileID: 1627447121}
+      objectReference: {fileID: 1627447123}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: powerSlider
       value: 
@@ -984,7 +984,11 @@ PrefabInstance:
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: mushroomPanel
       value: 
-      objectReference: {fileID: 1868423007}
+      objectReference: {fileID: 1868423009}
+    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: mushroomPanel_
+      value: 
+      objectReference: {fileID: 1868423009}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: mushroomPanel_
       value: 

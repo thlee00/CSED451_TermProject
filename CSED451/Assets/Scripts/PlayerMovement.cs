@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip audioWalk;
     public AudioClip audioDash;
     public bool invincible = false;
+    public Image dashPanel;
 
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool isDashOnCool;
     bool moveFast;
+    float m_dashCoolTime = 0;
 
     PlayerWardrobe playerWardrobe;
 
@@ -36,6 +39,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (isDashOnCool)
+        {
+            m_dashCoolTime += Time.deltaTime;
+            dashPanel.rectTransform.localScale = new Vector3(m_dashCoolTime / 1.0f, 0.5f, 1.0f);
+        }
+        else
+        {
+            m_dashCoolTime = 0;
+        }
+
         if (!playerWardrobe.isPlayerInWardrobe)
         {
             if (Input.GetKeyDown(KeyCode.Space) && !isDashOnCool)

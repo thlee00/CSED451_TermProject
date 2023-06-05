@@ -17,14 +17,15 @@ public class ItemManager : MonoBehaviour
     public TextMeshProUGUI shellNum;
     public TextMeshProUGUI potionNum;
     public TextMeshProUGUI mushroomNum;
-    public GameObject coinPanel;
-    public GameObject shellPanel;
-    public GameObject potionPanel;
-    public GameObject mushroomPanel;
+    public Image coinPanel;
+    public Image shellPanel;
+    public Image potionPanel;
+    public Image mushroomPanel;
     public Slider powerSlider;
     public GameObject powerGage;
     public Camera cam;
     public Transform player;
+    public AudioClip itemGetAudio;
 
     float m_coolTime = 0;
     bool m_ready;
@@ -35,6 +36,7 @@ public class ItemManager : MonoBehaviour
     Mushroom m_mushroomScript;
     PlayerTransperent m_potionScript;
     PlayerWardrobe m_playerWardrobe;
+    AudioSource m_audioSource;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -59,6 +61,7 @@ public class ItemManager : MonoBehaviour
         //m_potionScript = GetComponent<TransperentPotion>();
         m_mushroomScript = GetComponent<Mushroom>();
         m_playerWardrobe = GetComponent<PlayerWardrobe>();
+        m_audioSource = GetComponent<AudioSource>();
 
         coinNum.text = "x 00";
         shellNum.text = "x 00";
@@ -79,47 +82,47 @@ public class ItemManager : MonoBehaviour
         if (m_playerWardrobe.isPlayerInWardrobe) {
             StopCharging();
         }
-        /*
+
         if (!m_ready)
         {
             m_coolTime += Time.deltaTime;
-            coinPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
-            shellPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
-            potionPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
-            mushroomPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
+            coinPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 0.25f, 1.0f);
+            shellPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 0.25f, 1.0f);
+            potionPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 0.25f, 1.0f);
+            mushroomPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 0.25f, 1.0f);
         }
         else
         {
             m_coolTime = 0;
         }
-        */
+
         if (currentItem == 0)
         {
-            coinPanel.SetActive(true);
-            shellPanel.SetActive(false);
-            potionPanel.SetActive(false);
-            mushroomPanel.SetActive(false);
+            coinPanel.enabled = true;
+            shellPanel.enabled = false;
+            potionPanel.enabled = false;
+            mushroomPanel.enabled = false;
         }
         else if (currentItem == 1)
         {
-            coinPanel.SetActive(false);
-            shellPanel.SetActive(true);
-            potionPanel.SetActive(false);
-            mushroomPanel.SetActive(false);
+            coinPanel.enabled = false;
+            shellPanel.enabled = true;
+            potionPanel.enabled = false;
+            mushroomPanel.enabled = false;
         }
         else if (currentItem == 2)
         {
-            coinPanel.SetActive(false);
-            shellPanel.SetActive(false);
-            potionPanel.SetActive(true);
-            mushroomPanel.SetActive(false);
+            coinPanel.enabled = false;
+            shellPanel.enabled = false;
+            potionPanel.enabled = true;
+            mushroomPanel.enabled = false;
         }
         else if (currentItem == 3)
         {
-            coinPanel.SetActive(false);
-            shellPanel.SetActive(false);
-            potionPanel.SetActive(false);
-            mushroomPanel.SetActive(true);
+            coinPanel.enabled = false;
+            shellPanel.enabled = false;
+            potionPanel.enabled = false;
+            mushroomPanel.enabled = true;
         }
 
         // Use Item or Charge Item
@@ -221,6 +224,8 @@ public class ItemManager : MonoBehaviour
             if (col.gameObject.CompareTag(itemList[i]))
             {
                 GetItem(i);
+                m_audioSource.clip = itemGetAudio;
+                m_audioSource.Play();
                 Destroy(col.gameObject);
             }
         }
