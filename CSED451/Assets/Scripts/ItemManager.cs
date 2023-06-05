@@ -21,6 +21,8 @@ public class ItemManager : MonoBehaviour
     public GameObject shellPanel;
     public GameObject potionPanel;
     public GameObject mushroomPanel;
+    public Slider powerSlider;
+    public GameObject powerGage;
 
     bool m_ready;
     bool m_isCharging;
@@ -57,6 +59,8 @@ public class ItemManager : MonoBehaviour
         shellNum.text = "x 00";
         potionNum.text = "x 00";
         mushroomNum.text = "x 00";
+
+        powerSlider.value = 0f;
     }
 
     // Update is called once per frame
@@ -97,6 +101,8 @@ public class ItemManager : MonoBehaviour
         }
 
         // Use Item or Charge Item
+        powerSlider.value = m_chargePower;
+        powerSlider.transform.position = powerGage.transform.position;
         if (Input.GetKeyDown(useKey) && m_ready && numItem[currentItem] > 0)
         {
             if (currentItem == 0 || currentItem == 1) {

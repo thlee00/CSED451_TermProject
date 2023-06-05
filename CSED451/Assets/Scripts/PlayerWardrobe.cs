@@ -8,7 +8,10 @@ public class PlayerWardrobe : MonoBehaviour
     public bool isPlayerInWardrobe = false;
     public GameObject wardrobeDoor;
     public GameObject wardrobeMessage;
+    public AudioClip wardrobeIN;
+    public AudioClip wardrobeOUT;
 
+    AudioSource m_AudioSource;
     Camera m_MainCamera;
     GameObject m_Wardrobe;
     GameObject[] wardrobeCameras;
@@ -17,6 +20,7 @@ public class PlayerWardrobe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_AudioSource = GetComponent<AudioSource>();
         m_MainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         wardrobeCameras = GameObject.FindGameObjectsWithTag("WardrobeCamera");
         wardrobeDoor.SetActive(false);
@@ -36,6 +40,8 @@ public class PlayerWardrobe : MonoBehaviour
             print(m_Wardrobe);
             isPlayerInWardrobe = true;
             wardrobeDoor.SetActive(true);
+            m_AudioSource.clip = wardrobeIN;
+            m_AudioSource.Play();
             SetWardrobeCamera();
         }
         else if (Input.GetKeyDown(useKey) && isPlayerInWardrobe)
@@ -43,6 +49,8 @@ public class PlayerWardrobe : MonoBehaviour
             print("out wardrobe");
             isPlayerInWardrobe = false;
             wardrobeDoor.SetActive(false);
+            m_AudioSource.clip = wardrobeOUT;
+            m_AudioSource.Play();
             SetMainCamera();
         }
     }
