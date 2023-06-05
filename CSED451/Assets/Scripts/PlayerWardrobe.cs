@@ -6,6 +6,7 @@ public class PlayerWardrobe : MonoBehaviour
 {
     public KeyCode useKey = KeyCode.E;
     public bool isPlayerInWardrobe = false;
+    public GameObject wardrobeDoor;
 
     Camera m_MainCamera;
     GameObject m_Wardrobe;
@@ -17,6 +18,7 @@ public class PlayerWardrobe : MonoBehaviour
     {
         m_MainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         wardrobeCameras = GameObject.FindGameObjectsWithTag("WardrobeCamera");
+        wardrobeDoor.SetActive(false);
         foreach (GameObject wardrobeCamrea in wardrobeCameras)
         {
             wardrobeCamrea.GetComponent<Camera>().enabled = false;
@@ -31,12 +33,14 @@ public class PlayerWardrobe : MonoBehaviour
             print("in wardrobe");
             print(m_Wardrobe);
             isPlayerInWardrobe = true;
+            wardrobeDoor.SetActive(true);
             SetWardrobeCamera();
         }
         else if (Input.GetKeyDown(useKey) && isPlayerInWardrobe)
         {
             print("out wardrobe");
             isPlayerInWardrobe = false;
+            wardrobeDoor.SetActive(false);
             SetMainCamera();
         }
     }
