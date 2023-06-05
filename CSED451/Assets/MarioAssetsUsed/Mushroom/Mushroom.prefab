@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+      propertyPath: m_TagString
+      value: ItemMushroom
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -38,6 +42,18 @@ PrefabInstance:
     - target: {fileID: 400004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,5 +95,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+--- !u!1 &7527315421605387363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 48dd7b6b7d8ca7349bf3719fcf9d7a9f, type: 3}
+  m_PrefabInstance: {fileID: 7527315421605288647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &-5906712212037641987
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527315421605387363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &1218074343884474242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527315421605387363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46feb4ee4bbd0634bba1742c2c7f7d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 60
+  moveSpeed: 1
+  moveLength: 0.3
