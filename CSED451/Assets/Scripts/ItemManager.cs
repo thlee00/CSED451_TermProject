@@ -34,6 +34,7 @@ public class ItemManager : MonoBehaviour
     //ddd m_potionScript;
     Mushroom m_mushroomScript;
     PlayerTransperent m_potionScript;
+    PlayerWardrobe m_playerWardrobe;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -57,6 +58,7 @@ public class ItemManager : MonoBehaviour
         m_potionScript = GetComponent<PlayerTransperent>();
         //m_potionScript = GetComponent<TransperentPotion>();
         m_mushroomScript = GetComponent<Mushroom>();
+        m_playerWardrobe = GetComponent<PlayerWardrobe>();
 
         coinNum.text = "x 00";
         shellNum.text = "x 00";
@@ -73,6 +75,9 @@ public class ItemManager : MonoBehaviour
         SetItemNum();
         if (m_isCharging) {
             Charging();
+        }
+        if (m_playerWardrobe.isPlayerInWardrobe) {
+            StopCharging();
         }
         /*
         if (!m_ready)
@@ -120,7 +125,7 @@ public class ItemManager : MonoBehaviour
         // Use Item or Charge Item
         powerSlider.transform.position = cam.WorldToScreenPoint(player.position + new Vector3(0.7f, 0.5f, 0));
         powerSlider.value = m_chargePower;
-        if (Input.GetKeyDown(useKey) && m_ready && numItem[currentItem] > 0)
+        if (Input.GetKeyDown(useKey) && m_ready && numItem[currentItem] > 0 && !m_playerWardrobe.isPlayerInWardrobe)
         {
             if (currentItem == 0 || currentItem == 1) {
                 StartCharging();
@@ -133,7 +138,7 @@ public class ItemManager : MonoBehaviour
                 Use(currentItem);
             }
         }
-        else if (Input.GetKeyUp(useKey))
+        else if (Input.GetKeyUp(useKey) && !m_playerWardrobe.isPlayerInWardrobe)
         {
             if (currentItem == 0 || currentItem == 1) {
                 if (m_isCharging) Use(currentItem);
