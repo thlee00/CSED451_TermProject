@@ -6,6 +6,7 @@ public class Observer : MonoBehaviour
 {
     public Transform player;
     public GameEnding gameEnding;
+    public Transform viewOrigin;
 
     bool m_IsPlayerInRange;
     PlayerMovement playerMovement;
@@ -27,8 +28,9 @@ public class Observer : MonoBehaviour
     {
         if (m_IsPlayerInRange)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
-            Ray ray = new Ray(transform.position, direction);
+            Vector3 direction = (player.position - viewOrigin.position).normalized;
+            Ray ray = new Ray(viewOrigin.position, direction);
+            Debug.DrawRay(viewOrigin.position, direction, Color.green);
             RaycastHit raycastHit;
 
             if (Physics.Raycast(ray, out raycastHit))
