@@ -26,6 +26,7 @@ public class ItemManager : MonoBehaviour
     public Camera cam;
     public Transform player;
 
+    float m_coolTime = 0;
     bool m_ready;
     bool m_isCharging;
     float m_chargePower;
@@ -72,6 +73,18 @@ public class ItemManager : MonoBehaviour
         SetItemNum();
         if (m_isCharging) {
             Charging();
+        }
+        if (!m_ready)
+        {
+            m_coolTime += Time.deltaTime;
+            coinPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
+            shellPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
+            potionPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
+            mushroomPanel.rectTransform.localScale = new Vector3(m_coolTime / 2.0f, 1.0f, 1.0f);
+        }
+        else
+        {
+            m_coolTime = 0;
         }
         if (currentItem == 0)
         {
