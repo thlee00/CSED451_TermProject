@@ -74,6 +74,7 @@ public class ItemManager : MonoBehaviour
         if (m_isCharging) {
             Charging();
         }
+        /*
         if (!m_ready)
         {
             m_coolTime += Time.deltaTime;
@@ -86,6 +87,7 @@ public class ItemManager : MonoBehaviour
         {
             m_coolTime = 0;
         }
+        */
         if (currentItem == 0)
         {
             coinPanel.SetActive(true);
