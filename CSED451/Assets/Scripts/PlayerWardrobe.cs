@@ -8,6 +8,7 @@ public class PlayerWardrobe : MonoBehaviour
     public bool isPlayerInWardrobe = false;
     public GameObject wardrobeDoor;
     public GameObject wardrobeMessage;
+    public GameObject dashGroup;
     public AudioClip wardrobeIN;
     public AudioClip wardrobeOUT;
 
@@ -40,6 +41,7 @@ public class PlayerWardrobe : MonoBehaviour
             print(m_Wardrobe);
             isPlayerInWardrobe = true;
             wardrobeDoor.SetActive(true);
+            dashGroup.SetActive(false);
             m_AudioSource.clip = wardrobeIN;
             m_AudioSource.Play();
             SetWardrobeCamera();
@@ -49,6 +51,7 @@ public class PlayerWardrobe : MonoBehaviour
             print("out wardrobe");
             isPlayerInWardrobe = false;
             wardrobeDoor.SetActive(false);
+            dashGroup.SetActive(true);
             m_AudioSource.clip = wardrobeOUT;
             m_AudioSource.Play();
             SetMainCamera();

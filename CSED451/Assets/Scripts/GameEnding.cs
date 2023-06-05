@@ -71,6 +71,7 @@ public class GameEnding : MonoBehaviour
 
     void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
+        inGameUI.SetActive(false);
         if (!m_HasAudioPlayed)
         {
             audioSource.Play();

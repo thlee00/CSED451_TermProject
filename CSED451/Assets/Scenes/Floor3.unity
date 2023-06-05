@@ -634,6 +634,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2346530289907831316, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
+      propertyPath: dashGroup
+      value: 
+      objectReference: {fileID: 495076801}
+    - target: {fileID: 2346530289907831316, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: wardrobeDoor
       value: 
       objectReference: {fileID: 1672101360}
@@ -983,10 +987,6 @@ PrefabInstance:
       objectReference: {fileID: 1627447123}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
       propertyPath: mushroomPanel
-      value: 
-      objectReference: {fileID: 1868423009}
-    - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
-      propertyPath: mushroomPanel_
       value: 
       objectReference: {fileID: 1868423009}
     - target: {fileID: 7080717241192812657, guid: 22ce5fb9fff15b844914ff5b6836d3da, type: 3}
@@ -4813,7 +4813,7 @@ RectTransform:
   - {fileID: 935451009}
   - {fileID: 1389783899}
   m_Father: {fileID: 1063902842}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -4922,7 +4922,7 @@ RectTransform:
   - {fileID: 1245894325}
   - {fileID: 2109059103}
   m_Father: {fileID: 1063902842}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6440,9 +6440,9 @@ RectTransform:
   - {fileID: 2083682525}
   - {fileID: 1956394500}
   - {fileID: 1351509268}
+  - {fileID: 495076802}
   - {fileID: 1672101361}
   - {fileID: 551096244}
-  - {fileID: 495076802}
   m_Father: {fileID: 995303096}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8157,7 +8157,7 @@ RectTransform:
   - {fileID: 75580396}
   - {fileID: 250095415}
   m_Father: {fileID: 1063902842}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
