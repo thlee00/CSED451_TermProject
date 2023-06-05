@@ -634,6 +634,7 @@ MonoBehaviour:
   useKey: 101
   isPlayerInWardrobe: 0
   wardrobeDoor: {fileID: 0}
+  wardrobeMessage: {fileID: 0}
 --- !u!114 &5138842232318356120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +696,21 @@ MonoBehaviour:
   shellPanel: {fileID: 0}
   potionPanel: {fileID: 0}
   mushroomPanel: {fileID: 0}
+--- !u!114 &7610687203700759291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7174329940306780831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baae4df647e5ff448b262e6b1326294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transperentDelay: 5
+  isPlayerTransperented: 0
+  audioBegin: {fileID: 8300000, guid: 64196308d61368548aff9d0e3b55fb82, type: 3}
 --- !u!114 &7705180479553724782
 MonoBehaviour:
   m_ObjectHideFlags: 0

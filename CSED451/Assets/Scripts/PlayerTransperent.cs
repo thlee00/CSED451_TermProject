@@ -6,6 +6,8 @@ public class PlayerTransperent : MonoBehaviour
 {
     public float transperentDelay = 5.0f;
     public bool isPlayerTransperented;
+    public AudioClip audioBegin;
+    AudioSource m_AudioSource;
 
     List<Renderer> renderers;
     int numOfChild;
@@ -13,6 +15,7 @@ public class PlayerTransperent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_AudioSource = GetComponent<AudioSource>();
         renderers = new List<Renderer>();
         numOfChild = transform.childCount;
         for (int i = 0; i < numOfChild; i++)
@@ -34,6 +37,8 @@ public class PlayerTransperent : MonoBehaviour
     public void Use()
     {
         isPlayerTransperented = true;
+        m_AudioSource.clip = audioBegin;
+        m_AudioSource.Play();
         StartCoroutine(startTransperent());
     }
 
