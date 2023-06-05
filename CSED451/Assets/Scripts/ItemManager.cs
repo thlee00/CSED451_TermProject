@@ -25,6 +25,7 @@ public class ItemManager : MonoBehaviour
     public GameObject powerGage;
     public Camera cam;
     public Transform player;
+    public AudioClip itemGetAudio;
 
     float m_coolTime = 0;
     bool m_ready;
@@ -35,6 +36,7 @@ public class ItemManager : MonoBehaviour
     Mushroom m_mushroomScript;
     PlayerTransperent m_potionScript;
     PlayerWardrobe m_playerWardrobe;
+    AudioSource m_audioSource;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -59,6 +61,7 @@ public class ItemManager : MonoBehaviour
         //m_potionScript = GetComponent<TransperentPotion>();
         m_mushroomScript = GetComponent<Mushroom>();
         m_playerWardrobe = GetComponent<PlayerWardrobe>();
+        m_audioSource = GetComponent<AudioSource>();
 
         coinNum.text = "x 00";
         shellNum.text = "x 00";
@@ -221,6 +224,8 @@ public class ItemManager : MonoBehaviour
             if (col.gameObject.CompareTag(itemList[i]))
             {
                 GetItem(i);
+                m_audioSource.clip = itemGetAudio;
+                m_audioSource.Play();
                 Destroy(col.gameObject);
             }
         }

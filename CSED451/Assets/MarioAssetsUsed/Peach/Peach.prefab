@@ -702,6 +702,7 @@ MonoBehaviour:
   powerGage: {fileID: 0}
   cam: {fileID: 0}
   player: {fileID: 0}
+  itemGetAudio: {fileID: 8300000, guid: 2856b3f559dbca14f8a645268b205bdc, type: 3}
 --- !u!114 &7610687203700759291
 MonoBehaviour:
   m_ObjectHideFlags: 0
