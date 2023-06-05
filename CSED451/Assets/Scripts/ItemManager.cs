@@ -23,6 +23,8 @@ public class ItemManager : MonoBehaviour
     public GameObject mushroomPanel;
     public Slider powerSlider;
     public GameObject powerGage;
+    public Camera cam;
+    public Transform player;
 
     bool m_ready;
     bool m_isCharging;
@@ -60,7 +62,7 @@ public class ItemManager : MonoBehaviour
         potionNum.text = "x 00";
         mushroomNum.text = "x 00";
 
-        powerSlider.value = 0f;
+        powerGage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -101,8 +103,8 @@ public class ItemManager : MonoBehaviour
         }
 
         // Use Item or Charge Item
+        powerSlider.transform.position = cam.WorldToScreenPoint(player.position + new Vector3(0.7f, 0.5f, 0));
         powerSlider.value = m_chargePower;
-        powerSlider.transform.position = powerGage.transform.position;
         if (Input.GetKeyDown(useKey) && m_ready && numItem[currentItem] > 0)
         {
             if (currentItem == 0 || currentItem == 1) {
@@ -151,6 +153,7 @@ public class ItemManager : MonoBehaviour
     {
         m_chargePower = 0;
         m_isCharging = true;
+        powerGage.SetActive(true);
     }
 
     void Charging()
@@ -163,6 +166,7 @@ public class ItemManager : MonoBehaviour
     {
         m_chargePower = 0;
         m_isCharging = false;
+        powerGage.SetActive(false);
     }
 
     void Use(int itemCode)
