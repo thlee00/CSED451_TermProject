@@ -37,6 +37,14 @@ public class GameEnding : MonoBehaviour
         }
     }
 
+    public void ExitPlayer(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            m_IsPlayerAtExit = true;
+        }
+    }
+
     public void CaughtPlayer()
     {
         m_IsPlayerCaught = true;
