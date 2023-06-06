@@ -18,6 +18,7 @@ public class GameEnding : MonoBehaviour
     public GameObject startUI;
     public GameObject inGameUI;
     public GameObject[] respawnPoints = new GameObject[4];
+    public GameObject directionalLight;
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
@@ -84,7 +85,7 @@ public class GameEnding : MonoBehaviour
         {
             if (!m_LockPlayer)
             {
-                player.GetComponent<ItemManager>().SaveNumItem();
+                player.GetComponent<ItemManager>().ReactivateItem();
                 player.GetComponent<ItemManager>().enabled = false;
                 player.GetComponent<PlayerMovement>().enabled = false;
                 m_LockPlayer = true;
@@ -111,6 +112,10 @@ public class GameEnding : MonoBehaviour
             if (!doRestart && curFloor < 4)
             {
                 curFloor++;
+                if (curFloor == 3)
+                {
+                    directionalLight.SetActive(false);
+                }
             }
             if (curFloor < 4) {
                 player.transform.position = respawnPoints[curFloor-1].transform.position;

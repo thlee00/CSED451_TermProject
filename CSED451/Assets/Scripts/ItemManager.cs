@@ -38,6 +38,7 @@ public class ItemManager : MonoBehaviour
     PlayerWardrobe m_playerWardrobe;
     AudioSource m_audioSource;
     int[] m_savedNumItem;
+    List<GameObject> m_itemInScene;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -73,6 +74,8 @@ public class ItemManager : MonoBehaviour
         m_savedNumItem = new int[4];
 
         SaveNumItem();
+        m_itemInScene = new List<GameObject>();
+        RegisterItem();
     }
 
     // Update is called once per frame
@@ -230,7 +233,8 @@ public class ItemManager : MonoBehaviour
                 GetItem(i);
                 m_audioSource.clip = itemGetAudio;
                 m_audioSource.Play();
-                Destroy(col.gameObject);
+                // Destroy(col.gameObject);
+                col.gameObject.SetActive(false);
             }
         }
     }
@@ -256,6 +260,26 @@ public class ItemManager : MonoBehaviour
         for (int i = 0; i < m_savedNumItem.Length; i++)
         {
             numItem[i] = m_savedNumItem[i];
+        }
+    }
+
+    void RegisterItem()
+    {
+        foreach(string itemTag in itemList)
+        {
+            GameObject[] items = GameObject.FindGameObjectsWithTag(itemTag);
+            foreach(GameObject item in items)
+            {
+                m_itemInScene.Add(item);
+            }
+        }
+    }
+
+    public void ReactivateItem()
+    {
+        foreach(GameObject item in m_itemInScene)
+        {
+            item.SetActive(true);
         }
     }
 }

@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 m_AudioSource.clip = audioDash;
                 m_AudioSource.Play();
 
-                invincible = true;
+                // invincible = true;
                 m_Animator.SetBool("IsDashing", true);
                 moveFast = true;
                 StartCoroutine(DashDuration());
