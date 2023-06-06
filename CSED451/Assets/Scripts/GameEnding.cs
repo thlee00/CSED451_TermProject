@@ -27,15 +27,15 @@ public class GameEnding : MonoBehaviour
     bool m_LockPlayer = false;
     bool m_HasPlayerRespawned = false;
 
-    static int curFloor = 3;
+    static int curFloor = 1;
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            m_IsPlayerAtExit = true;
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject == player)
+    //     {
+    //         m_IsPlayerAtExit = true;
+    //     }
+    // }
 
     public void ExitPlayer(Collider other)
     {
@@ -68,7 +68,7 @@ public class GameEnding : MonoBehaviour
             inGameUI.SetActive(true);
         }
 
-        floorNum.text = "Floor " + curFloor.ToString();
+        floorNum.text = "Stage " + curFloor.ToString();
         if (m_IsPlayerAtExit)
         {
             if (!m_LockPlayer)
@@ -108,19 +108,19 @@ public class GameEnding : MonoBehaviour
 
         if (m_Timer > fadeDuration && ! m_HasPlayerRespawned)
         {
-            if (!doRestart && curFloor > 0)
+            if (!doRestart && curFloor < 4)
             {
-                curFloor--;
+                curFloor++;
             }
-            if (curFloor > 0) {
-                player.transform.position = respawnPoints[curFloor].transform.position;
+            if (curFloor < 4) {
+                player.transform.position = respawnPoints[curFloor-1].transform.position;
             }
             m_HasPlayerRespawned = true;
         }
 
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            if (!doRestart && curFloor == 0)
+            if (!doRestart && curFloor == 4)
             {
                 Application.Quit();
             }

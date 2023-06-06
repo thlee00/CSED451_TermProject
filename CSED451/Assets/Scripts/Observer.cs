@@ -49,8 +49,6 @@ public class Observer : MonoBehaviour
         {
             m_IsPlayerInRange = true;
         }
-        else if (playerTransperent.isPlayerTransperented)
-            print("TRANSPERENTED");
     }
 
     void OnTriggerExit(Collider other)

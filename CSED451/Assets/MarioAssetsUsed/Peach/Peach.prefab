@@ -635,6 +635,7 @@ MonoBehaviour:
   isPlayerInWardrobe: 0
   wardrobeDoor: {fileID: 0}
   wardrobeMessage: {fileID: 0}
+  dashGroup: {fileID: 0}
   wardrobeIN: {fileID: 8300000, guid: 7b3e9af572e9d854f95d19a6fd97c4c0, type: 3}
   wardrobeOUT: {fileID: 8300000, guid: 639cb7fe8d877db40bbd4937647b40ee, type: 3}
 --- !u!114 &5138842232318356120
@@ -669,6 +670,7 @@ MonoBehaviour:
   audioWalk: {fileID: 8300000, guid: 7ce4b5254fbd4f8428c84b5ff8f864e9, type: 3}
   audioDash: {fileID: 8300000, guid: b685cd3d417ccd04dae096920d5bc426, type: 3}
   invincible: 0
+  dashPanel: {fileID: 0}
 --- !u!114 &7080717241192812657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +688,7 @@ MonoBehaviour:
   - ItemShell
   - ItemPotion
   - ItemMushroom
-  numItem: 05000000050000000500000005000000
+  numItem: 00000000000000000000000000000000
   currentItem: 0
   coolDown: 2
   useKey: 323
