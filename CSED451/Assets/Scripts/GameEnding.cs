@@ -128,7 +128,7 @@ public class GameEnding : MonoBehaviour
             if (!doRestart && curFloor == 4)
             {
                 // Application.Quit();
-                SceneManager.LoadScene("WinAniationScene");
+                SceneManager.LoadScene("WinAnimationScene");
             }
             else 
             {
