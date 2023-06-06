@@ -37,6 +37,7 @@ public class ItemManager : MonoBehaviour
     PlayerTransperent m_potionScript;
     PlayerWardrobe m_playerWardrobe;
     AudioSource m_audioSource;
+    int[] m_savedNumItem;
 
     readonly KeyCode[] m_keyCodes = {
          KeyCode.Alpha1,
@@ -69,6 +70,9 @@ public class ItemManager : MonoBehaviour
         mushroomNum.text = "x 00";
 
         powerGage.SetActive(false);
+        m_savedNumItem = new int[4];
+
+        SaveNumItem();
     }
 
     // Update is called once per frame
@@ -237,5 +241,21 @@ public class ItemManager : MonoBehaviour
         shellNum.text = "x " + (numItem[1] / 10).ToString() + (numItem[1] % 10).ToString();
         potionNum.text = "x " + (numItem[2] / 10).ToString() + (numItem[2] % 10).ToString();
         mushroomNum.text = "x " + (numItem[3] / 10).ToString() + (numItem[3] % 10).ToString();
+    }
+
+    public void SaveNumItem()
+    {
+        for (int i = 0; i < numItem.Length; i++)
+        {
+            m_savedNumItem[i] = numItem[i];
+        }
+    }
+
+    public void LoadNumItem()
+    {
+        for (int i = 0; i < m_savedNumItem.Length; i++)
+        {
+            numItem[i] = m_savedNumItem[i];
+        }
     }
 }

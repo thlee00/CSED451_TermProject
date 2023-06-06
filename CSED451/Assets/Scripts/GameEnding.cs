@@ -17,12 +17,15 @@ public class GameEnding : MonoBehaviour
     public TextMeshProUGUI floorNum;
     public GameObject startUI;
     public GameObject inGameUI;
+    public GameObject[] respawnPoints = new GameObject[4];
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
     bool m_IsStarted = false;
+    bool m_LockPlayer = false;
+    bool m_HasPlayerRespawned = false;
 
     static int curFloor = 3;
 
@@ -60,10 +63,24 @@ public class GameEnding : MonoBehaviour
         floorNum.text = "Floor " + curFloor.ToString();
         if (m_IsPlayerAtExit)
         {
+            if (!m_LockPlayer)
+            {
+                player.GetComponent<ItemManager>().SaveNumItem();
+                player.GetComponent<ItemManager>().enabled = false;
+                player.GetComponent<PlayerMovement>().enabled = false;
+                m_LockPlayer = true;
+            }
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }
         else if (m_IsPlayerCaught)
         {
+            if (!m_LockPlayer)
+            {
+                player.GetComponent<ItemManager>().SaveNumItem();
+                player.GetComponent<ItemManager>().enabled = false;
+                player.GetComponent<PlayerMovement>().enabled = false;
+                m_LockPlayer = true;
+            }
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
     }
@@ -79,25 +96,45 @@ public class GameEnding : MonoBehaviour
         }
 
         m_Timer += Time.deltaTime;
-
         imageCanvasGroup.alpha = m_Timer / fadeDuration;
+
+        if (m_Timer > fadeDuration && ! m_HasPlayerRespawned)
+        {
+            if (!doRestart && curFloor > 0)
+            {
+                curFloor--;
+            }
+            if (curFloor > 0) {
+                player.transform.position = respawnPoints[curFloor].transform.position;
+            }
+            m_HasPlayerRespawned = true;
+        }
 
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            if (doRestart)
-            {
-                curFloor = 3;
-                SceneManager.LoadScene("Floor" + curFloor.ToString());
-            }
-            else if (curFloor == 1)
+            if (!doRestart && curFloor == 0)
             {
                 Application.Quit();
             }
-            else
+            else 
             {
-                curFloor--;
-                SceneManager.LoadScene("Floor" + curFloor.ToString());
+                ResetFloor(imageCanvasGroup);
             }
         }
+    }
+
+    void ResetFloor(CanvasGroup imageCanvasGroup)
+    {
+        inGameUI.SetActive(true);
+        m_IsPlayerAtExit = false;
+        m_IsPlayerCaught = false;
+        m_Timer = 0f;
+        m_HasAudioPlayed = false;
+        imageCanvasGroup.alpha = 0;
+        player.GetComponent<ItemManager>().enabled = true;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<ItemManager>().LoadNumItem();
+        m_LockPlayer = false;
+        m_HasPlayerRespawned = false;
     }
 }
