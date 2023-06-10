@@ -1,5 +1,5 @@
 # Princess Peachs Grand Escape
-
+<hr>
 <div align=center>
 ![image](https://github.com/thlee00/Princess-Peachs-Grand-Escape_CSED451/assets/56151577/8c81f99f-1b3f-4709-900d-adb752334242)
 </div>
@@ -12,7 +12,9 @@
 -개발 기간: 2023.05-2023.06
 -팀원
   -주의손 / [UisonJu](https://github.com/UisonJu) / 컴퓨터공학과 / 20190879 / 팀장
+  
   -공민수 / [Graystone](https://github.com/Graystone) / 컴퓨터공학과 / 20232563
+  
   -이태희 / [thlee00](https://github.com/thlee00) / 컴퓨터공학과 / 20190829
 
 ## 프로젝트 소개
