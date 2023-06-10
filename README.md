@@ -2,7 +2,9 @@
 <div align=center>
 <p><img src="https://github.com/thlee00/Princess-Peachs-Grand-Escape_CSED451/assets/56151577/8c81f99f-1b3f-4709-900d-adb752334242" alt="image"></p>
 </div>
-> ‘슈퍼 마리오’ IP를 사용하는 대부분의 게임은 ‘마리오’라는 남주인공이 ‘피치 공주’라는 여주인공을 구하는 시나리오가 전개된다. 본 프로젝트에서는 마리오를 기다리다 지친 피치 공주가 직접 성을 탈출하러 나서는 스토리의 게임을 구현하고자 한다. 성에 갇혀 있는 피치 공주는 성 내 곳곳에 있는 경비병들의 눈을 피해 성문 밖으로 무사히 탈출해야 한다.
+<blockquote>
+<p>‘슈퍼 마리오’ IP를 사용하는 대부분의 게임은 ‘마리오’라는 남주인공이 ‘피치 공주’라는 여주인공을 구하는 시나리오가 전개된다. 본 프로젝트에서는 마리오를 기다리다 지친 피치 공주가 직접 성을 탈출하러 나서는 스토리의 게임을 구현하고자 한다. 성에 갇혀 있는 피치 공주는 성 내 곳곳에 있는 경비병들의 눈을 피해 성문 밖으로 무사히 탈출해야 한다.</p>
+</blockquote>
 <hr>
 <div align=center>
 <p><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fthlee00%2FPrincess-Peachs-Grand-Escape_CSED451&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=hits&amp;edge_flat=false" alt="Hits"></a></p>
